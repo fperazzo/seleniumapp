@@ -36,3 +36,7 @@ def create_tables():
     finally:
         if conn is not None:
             conn.close()
+
+
+
+create_tables()
