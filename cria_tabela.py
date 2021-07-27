@@ -7,7 +7,7 @@ def create_tables():
     """ create tables in the PostgreSQL database"""
     commands = ("""CREATE TABLE geral (
             geral_id SERIAL PRIMARY KEY,
-            geral_data datetime NOT NULL,
+            geral_data timestamp NOT NULL,
             geral_acoes real NOT NULL)
             """,
             """ CREATE TABLE aportes (
