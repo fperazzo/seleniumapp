@@ -5,20 +5,15 @@ DATABASE_URL = os.environ['DATABASE_URL']
 
 def create_tables():
     """ create tables in the PostgreSQL database"""
-    commands = (
-        """
-        CREATE TABLE geral (
+    commands = ("""CREATE TABLE geral (
             geral_id SERIAL PRIMARY KEY,
             geral_data DATETIME NOT NULL,
-            geral_acoes REAL NOT NULL,
-            
-        )
-        """,
-        """ CREATE TABLE aportes (
-                aportes_id SERIAL PRIMARY KEY,
-                aportes_name VARCHAR(255) NOT NULL
-                )
-        """)
+            geral_acoes REAL NOT NULL)
+            """,
+            """ CREATE TABLE aportes (
+            aportes_id SERIAL PRIMARY KEY,
+            aportes_name VARCHAR(255) NOT NULL)
+            """)
     conn = None
     try:
         # connect to the PostgreSQL server
