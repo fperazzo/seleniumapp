@@ -4,7 +4,7 @@ import os
 DATABASE_URL = os.environ['DATABASE_URL']
 
 """ create tables in the PostgreSQL database"""
-command = ("""CREATE TABLE dadosgerais (
+commands = ("""CREATE TABLE dadosgerais (
         id SERIAL PRIMARY KEY,
         data timestamp NOT NULL,
         acoes real NOT NULL,
