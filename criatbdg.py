@@ -23,6 +23,7 @@ try:
     id SERIAL PRIMARY KEY,
     data timestamp NOT NULL,
     acoes real NOT NULL,
+    
     fii real NOT NULL,
     reits real NOT NULL,
     rfixa real NOT NULL,
