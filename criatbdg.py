@@ -3,16 +3,6 @@ import os
 
 DATABASE_URL = os.environ['DATABASE_URL']
 
-"""CREATE TABLE dadosgerais (
-        id SERIAL PRIMARY KEY,
-        data timestamp NOT NULL,
-        acoes real NOT NULL,
-        fii real NOT NULL,
-        reits real NOT NULL,
-        rfixa real NOT NULL,
-        rvalor real NOT NULL,
-        stocks real NOT NULL,)
-        """
 conn = None
 try:
     # connect to the PostgreSQL server
@@ -23,7 +13,6 @@ try:
     id SERIAL PRIMARY KEY,
     data timestamp NOT NULL,
     acoes real NOT NULL,
-    
     fii real NOT NULL,
     reits real NOT NULL,
     rfixa real NOT NULL,
