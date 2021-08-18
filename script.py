@@ -36,7 +36,7 @@ Rfixa = float(trs[6].text.split(" ")[2].replace(".","").replace(",","."))
 Rvalor = float(trs[7].text.split(" ")[3].replace(".","").replace(",","."))
 Stocks = float(trs[8].text.split(" ")[1].replace(".","").replace(",","."))
 
-dados = [(datetime.now(),Acoes,Fii,Reits,Rfixa,Rvalor,Stocks)]
+dados = [(date.today(),Acoes,Fii,Reits,Rfixa,Rvalor,Stocks)]
 inseredg(dados)
 
-print("importado dados com sucesso as" + datetime.now().isoformat() )
+print("importado dados com sucesso : " + datetime.now().isoformat() )
