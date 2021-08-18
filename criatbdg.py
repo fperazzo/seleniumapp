@@ -3,8 +3,7 @@ import os
 
 DATABASE_URL = os.environ['DATABASE_URL']
 
-""" create tables in the PostgreSQL database"""
-commands = ("""CREATE TABLE dadosgerais (
+"""CREATE TABLE dadosgerais (
         id SERIAL PRIMARY KEY,
         data timestamp NOT NULL,
         acoes real NOT NULL,
@@ -13,15 +12,23 @@ commands = ("""CREATE TABLE dadosgerais (
         rfixa real NOT NULL,
         rvalor real NOT NULL,
         stocks real NOT NULL,)
-        """)
+        """
 conn = None
 try:
     # connect to the PostgreSQL server
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     cur = conn.cursor()
     # create table one by one
-    for command in commands:
-        cur.execute(command)
+    cur.execute("""CREATE TABLE dadosgerais (
+    id SERIAL PRIMARY KEY,
+    data timestamp NOT NULL,
+    acoes real NOT NULL,
+    fii real NOT NULL,
+    reits real NOT NULL,
+    rfixa real NOT NULL,
+    rvalor real NOT NULL,
+    stocks real NOT NULL,)
+    """)
     # close communication with the PostgreSQL database server
     cur.close()
     # commit the changes
