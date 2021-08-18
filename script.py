@@ -1,6 +1,8 @@
 from selenium import webdriver
 import os
 from time import sleep
+from datetime import date, datetime
+from dbfunctions import inseredg
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")
@@ -34,10 +36,7 @@ Rfixa = float(trs[6].text.split(" ")[2].replace(".","").replace(",","."))
 Rvalor = float(trs[7].text.split(" ")[3].replace(".","").replace(",","."))
 Stocks = float(trs[8].text.split(" ")[1].replace(".","").replace(",","."))
 
+dados = [(datetime.now(),Acoes,Fii,Reits,Rfixa,Rvalor,Stocks)]
+inseredg(dados)
 
-print("Acoes " + str(Acoes))
-print("Fii " + str(Fii))
-print("Reits " + str(Reits))
-print("Rfixa " + str(Rfixa))
-print("Rvalor " + str(Rvalor))
-print("Stocks " + str(Stocks))
+print("importado dados com sucesso as" + datetime.now().isoformat() )
