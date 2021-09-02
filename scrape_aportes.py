@@ -63,8 +63,6 @@ def scrapeaportes(dataagora):
         else:
             valor = valor[0]
 
-        print(valor)
-
         valor =valor.replace(".","").replace(",",".")
 
         if tp == "Ação":
@@ -81,5 +79,7 @@ def scrapeaportes(dataagora):
             Stocks = Stocks + round(valor,2)
 
     dados = [(dataagora,Acoes,Fii,Reits,Rfixa,Rvalor,Stocks)]
+
+    driver.close()
 
     return dados
